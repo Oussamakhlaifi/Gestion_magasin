@@ -5,10 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 
 import java.io.IOException;
@@ -29,6 +26,8 @@ public class HelloController {
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
+    @FXML
+    private Button Fournisseur;
 
 
 @FXML
@@ -59,20 +58,21 @@ protected void ident() {
     }
 }
 @FXML
-protected void addRegister() {
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("register.fxml"));
-    Parent root = null;
+protected void AddRegister() {
     try {
-        root = loader.load();
+        // Charger le fichier FXML de la page "register.fxml"
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("com/example.gestionstock.register.fxml"));
+        Parent root = loader.load();
+
+        // Changer le contenu de la scène principale avec la nouvelle page
+        Scene scene = register.getScene();
+        scene.setRoot(root);
+
     } catch (IOException e) {
-        throw new RuntimeException(e);
+        e.printStackTrace();
+    } catch (Exception e) {
+        e.printStackTrace();
+        System.err.println("Error loading Register page: " + e.getMessage());
     }
-
-    // Accéder à la scène à partir du nœud source du bouton
-    Scene scene = register.getScene();
-
-    // Changer le contenu de la racine avec la deuxième page
-    scene.setRoot(root);
-
 }
 }

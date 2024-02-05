@@ -13,10 +13,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionstock.HelloController">
    <children>
-      <ButtonBar layoutX="21.0" layoutY="232.0" prefHeight="87.0" prefWidth="246.0">
+      <ButtonBar layoutX="65.0" layoutY="226.0" prefHeight="50.0" prefWidth="103.0">
         <buttons>
           <Button fx:id="connexion" mnemonicParsing="false" onAction="#ident" prefHeight="34.0" prefWidth="90.0" text="Valider" />
-            <Button fx:id="register" mnemonicParsing="false" onAction="#addRegister" prefHeight="34.0" text="Register" />
         </buttons>
       </ButtonBar>
       <PasswordField fx:id="password" layoutX="71.0" layoutY="199.0" />
@@ -34,9 +33,9 @@
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="222.0" fitWidth="265.0" layoutX="315.0" layoutY="115.0" pickOnBounds="true">
+      <ImageView fitHeight="400.0" fitWidth="360.0" layoutX="240.0" layoutY="1.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../../../../../../Downloads/gestion-de-stock-cours-pdf-gratuit-820x548.png" />
+            <Image url="@../../../images/gestion-de-stock-cours-pdf-gratuit-820x548.png" />
          </image>
       </ImageView>
       <Label layoutX="117.0" layoutY="25.0" prefHeight="78.0" prefWidth="150.0" text="Admin">
@@ -44,5 +43,11 @@
             <Font name="Arial Bold" size="35.0" />
          </font>
       </Label>
+      <ImageView fitHeight="50.0" fitWidth="56.0" layoutX="52.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/Admin.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="register" layoutX="77.0" layoutY="276.0" mnemonicParsing="false" onAction="#AddRegister" prefHeight="34.0" prefWidth="90.0" text="Register" />
    </children>
 </AnchorPane>
