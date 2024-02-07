@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionstock.HelloController">
    <items>
       <AnchorPane prefHeight="398.0" prefWidth="427.0">
          <children>
@@ -19,11 +19,11 @@
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <Button layoutX="10.0" layoutY="125.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="220.0" text="Listes des produits" />
-            <Button fx:id="Fournisseur" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="220.0" text="Listes des fournisseures " />
-            <Button layoutX="10.0" layoutY="224.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="220.0" text="Statistiques" />
+            <Button fx:id="Commende" layoutX="10.0" layoutY="125.0" mnemonicParsing="false" onAction="#AddCommende" prefHeight="42.0" prefWidth="220.0" text="Listes des produits" />
+            <Button fx:id="Fournisseur" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" onAction="#AddFournisseur" prefHeight="42.0" prefWidth="220.0" text="Listes des fournisseures " />
+            <Button fx:id="Statistique" layoutX="10.0" layoutY="224.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="220.0" text="Statistiques" />
             <Button layoutX="10.0" layoutY="277.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="220.0" text="Ajouter un fournisseur" />
-            <Button layoutX="10.0" layoutY="328.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="220.0" text="Déconnexion" />
+            <Button fx:id="deconnexion" layoutX="10.0" layoutY="328.0" mnemonicParsing="false" onAction="#logout" prefHeight="42.0" prefWidth="220.0" text="Déconnexion" />
             <ImageView fitHeight="112.0" fitWidth="211.0" layoutX="16.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/gestion-des-stocks.png" />

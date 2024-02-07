@@ -1,6 +1,7 @@
 package com.example.gestionstock;
 
 import com.bdd.IdentifyService;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,6 +31,10 @@ public class HelloController {
     private Button Fournisseur;
     @FXML
     private Button Commende;
+    @FXML
+    private Button Statistique;
+    @FXML
+    private Button deconnexion;
 
 
 @FXML
@@ -77,4 +82,54 @@ protected void AddRegister() {
         System.err.println("Error loading Register page: " + e.getMessage());
     }
 }
+    @FXML
+    protected void AddFournisseur() {
+        try {
+            // Charger le fichier FXML de la page "register.fxml"
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("com.example.gestionstock/Liste_Fournisseur.fxml"));
+            Parent root = loader.load();
+
+            // Changer le contenu de la scène principale avec la nouvelle page
+            Scene scene = Fournisseur.getScene();
+            scene.setRoot(root);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error loading Register page: " + e.getMessage());
+        }
+    }
+    @FXML
+    protected void AddCommende() {
+        try {
+            // Charger le fichier FXML de la page "register.fxml"
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("commende.fxml"));
+            Parent root = loader.load();
+
+            // Changer le contenu de la scène principale avec la nouvelle page
+            Scene scene = Commende.getScene();
+            scene.setRoot(root);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error loading Register page: " + e.getMessage());
+        }
+    }
+
+
+        // Méthode de déconnexion
+        public void logout() {
+            // Code pour effectuer la déconnexion
+            // Par exemple, vous pouvez réinitialiser les données de session, fermer les connexions de base de données, etc.
+
+            // Affichage d'un message de déconnexion (à titre d'exemple)
+            System.out.println("Déconnexion réussie.");
+
+            // Fermeture de l'application JavaFX (vous pouvez également naviguer vers une autre fenêtre ou effectuer d'autres actions)
+            Platform.exit();
+        }
+
 }
