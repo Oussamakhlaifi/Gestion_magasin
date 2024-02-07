@@ -28,6 +28,8 @@ public class HelloController {
     }
     @FXML
     private Button Fournisseur;
+    @FXML
+    private Button Commende;
 
 
 @FXML
@@ -61,7 +63,7 @@ protected void ident() {
 protected void AddRegister() {
     try {
         // Charger le fichier FXML de la page "register.fxml"
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("com/example.gestionstock.register.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("register.fxml"));
         Parent root = loader.load();
 
         // Changer le contenu de la scène principale avec la nouvelle page
