@@ -38,7 +38,7 @@ public class HelloController {
     @FXML
     private Button Home;
     @FXML
-    private Button
+    private Button Ajouter_Fournisseur;
 
 
 @FXML
@@ -153,5 +153,6 @@ protected void AddRegister() {
             System.err.println("Error loading Register page: " + e.getMessage());
         }
     }
+
 
 }
