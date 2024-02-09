@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionstock.ListeFournisseur">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionstock.HelloController">
    <children>
       <Label layoutX="304.0" layoutY="19.0" prefHeight="56.0" prefWidth="265.0" text="La liste des fournisseur">
          <font>
@@ -29,9 +28,10 @@
       <TextField layoutX="16.0" layoutY="125.0" prefHeight="35.0" prefWidth="199.0" />
       <TextField layoutX="16.0" layoutY="188.0" prefHeight="35.0" prefWidth="199.0" />
       <TextField layoutX="17.0" layoutY="251.0" prefHeight="35.0" prefWidth="199.0" />
-      <Button layoutX="17.0" layoutY="306.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="199.0" text="Valider" />
+      <Button fx:id="Fournisseur" layoutX="17.0" layoutY="294.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="199.0" text="Valider" />
       <Label layoutX="17.0" layoutY="97.0" prefHeight="28.0" prefWidth="144.0" text="Nom de Fournisseur" />
-      <Label layoutX="18.0" layoutY="161.0" prefHeight="28.0" prefWidth="144.0" text="Nom de produit" />
+      <Label layoutX="18.0" layoutY="161.0" prefHeight="28.0" prefWidth="144.0" text="Type de produit " />
       <Label layoutX="18.0" layoutY="224.0" prefHeight="28.0" prefWidth="144.0" text="Id produit" />
+      <Button fx:id="Home" layoutX="17.0" layoutY="338.0" mnemonicParsing="false" onAction="#Home" prefHeight="35.0" prefWidth="199.0" text="Home" />
    </children>
 </AnchorPane>

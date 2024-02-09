@@ -35,6 +35,10 @@ public class HelloController {
     private Button Statistique;
     @FXML
     private Button deconnexion;
+    @FXML
+    private Button Home;
+    @FXML
+    private Button
 
 
 @FXML
@@ -86,7 +90,7 @@ protected void AddRegister() {
     protected void AddFournisseur() {
         try {
             // Charger le fichier FXML de la page "register.fxml"
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("com.example.gestionstock/Liste_Fournisseur.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Liste_Fournisseur.fxml"));
             Parent root = loader.load();
 
             // Changer le contenu de la scène principale avec la nouvelle page
@@ -131,5 +135,23 @@ protected void AddRegister() {
             // Fermeture de l'application JavaFX (vous pouvez également naviguer vers une autre fenêtre ou effectuer d'autres actions)
             Platform.exit();
         }
+    @FXML
+    protected void Home() {
+        try {
+            // Charger le fichier FXML de la page "register.fxml"
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+            Parent root = loader.load();
+
+            // Changer le contenu de la scène principale avec la nouvelle page
+            Scene scene = Home.getScene();
+            scene.setRoot(root);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error loading Register page: " + e.getMessage());
+        }
+    }
 
 }
