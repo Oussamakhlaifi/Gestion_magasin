@@ -39,7 +39,12 @@ public class HelloController {
     private Button Home;
     @FXML
     private Button Ajouter_Fournisseur;
-
+    @FXML
+    private TextField NameF;
+    @FXML
+    private TextField Type_Product;
+    @FXML
+    private
 
 @FXML
 protected void ident() {
@@ -152,6 +157,26 @@ protected void AddRegister() {
             e.printStackTrace();
             System.err.println("Error loading Register page: " + e.getMessage());
         }
+
+    }
+    @FXML
+    protected void Statisque() {
+        try {
+            // Charger le fichier FXML de la page "register.fxml"
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Statisque.fxml"));
+            Parent root = loader.load();
+
+            // Changer le contenu de la scène principale avec la nouvelle page
+            Scene scene = Statistique.getScene();
+            scene.setRoot(root);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error loading Register page: " + e.getMessage());
+        }
+
     }
 
 
