@@ -7,7 +7,7 @@ public class Methode {
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "";
 
-    public boolean insertFournisseur(String supplierName, String productType, String productID) {
+    public boolean insertFournisseur(String supplierName, String productType, Integer productID) {
         String query = "INSERT INTO fournisseur (supplierName, productType, productID) VALUES (?, ?, ?)";
 
         try (Connection connection = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASSWORD);
@@ -15,7 +15,7 @@ public class Methode {
 
             preparedStatement.setString(1, supplierName);
             preparedStatement.setString(2, productType);
-            preparedStatement.setString(3, productID);
+            preparedStatement.setInt(3, productID);
 
             int rowsAffected = preparedStatement.executeUpdate();
             return rowsAffected > 0; // True if insertion successful, otherwise false

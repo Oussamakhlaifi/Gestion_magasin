@@ -44,7 +44,7 @@ public class HelloController {
     @FXML
     private TextField Type_Product;
     @FXML
-    private
+    private TextField ID_product;
 
 @FXML
 protected void ident() {
@@ -178,6 +178,9 @@ protected void AddRegister() {
         }
 
     }
+   @FXML
+    protected void Fournisseur (){
 
+   }
 
 }
