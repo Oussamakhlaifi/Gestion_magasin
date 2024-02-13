@@ -22,7 +22,7 @@
             <Button fx:id="Commende" layoutX="10.0" layoutY="125.0" mnemonicParsing="false" onAction="#AddCommende" prefHeight="42.0" prefWidth="220.0" text="Liste des commandes" />
             <Button fx:id="Fournisseur" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" onAction="#AddFournisseur" prefHeight="42.0" prefWidth="220.0" text="Liste des fournisseures " />
             <Button fx:id="Statistique" layoutX="10.0" layoutY="224.0" mnemonicParsing="false" onAction="#Statisque" prefHeight="42.0" prefWidth="220.0" text="Statistiques" />
-            <Button layoutX="10.0" layoutY="277.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="220.0" text="Liste des produits" />
+            <Button fx:id="product" layoutX="10.0" layoutY="277.0" mnemonicParsing="false" onAction="#AddProduct" prefHeight="42.0" prefWidth="220.0" text="Liste des produits" />
             <Button fx:id="deconnexion" layoutX="10.0" layoutY="328.0" mnemonicParsing="false" onAction="#logout" prefHeight="42.0" prefWidth="220.0" text="Déconnexion" />
             <ImageView fitHeight="112.0" fitWidth="211.0" layoutX="16.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                <image>

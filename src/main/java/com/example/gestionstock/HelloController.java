@@ -46,6 +46,8 @@ public class HelloController {
     private TextField Type_Product;
     @FXML
     private TextField ID_product;
+    @FXML
+    private Button product;
 
 @FXML
 protected void ident() {
@@ -164,7 +166,7 @@ protected void AddRegister() {
     protected void Statisque() {
         try {
             // Charger le fichier FXML de la page "register.fxml"
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Statisque.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Statistique.fxml"));
             Parent root = loader.load();
 
             // Changer le contenu de la scène principale avec la nouvelle page
@@ -197,6 +199,24 @@ protected void AddRegister() {
             System.out.println("L'insertion a réussi");
         } else {
             System.out.println("L'insertion a échoué");
+        }
+    }
+    @FXML
+    protected void AddProduct() {
+        try {
+            // Charger le fichier FXML de la page "register.fxml"
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Product.fxml"));
+            Parent root = loader.load();
+
+            // Changer le contenu de la scène principale avec la nouvelle page
+            Scene scene = product.getScene();
+            scene.setRoot(root);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error loading Register page: " + e.getMessage());
         }
     }
 
