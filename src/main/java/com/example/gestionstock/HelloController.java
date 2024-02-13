@@ -1,6 +1,7 @@
 package com.example.gestionstock;
 
 import com.bdd.IdentifyService;
+import com.bdd.Methode;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -178,9 +179,25 @@ protected void AddRegister() {
         }
 
     }
-   @FXML
+    @FXML
     protected void Fournisseur (){
+        // Récupérer les valeurs des champs de texte
+        String supplierName = NameF.getText();
+        String productType = Type_Product.getText();
 
-   }
+        // Convertir l'ID du produit en entier
+        String productID = ID_product.getText();
+
+        // Créer une instance de la classe d'insertion de fournisseur
+        // Créer une instance de la classe Methode
+        Methode methode = new Methode();
+
+// Appeler la méthode insertFournisseur sur l'instance de la classe Methode
+        if (methode.insertFournisseur(supplierName, productType, productID)) {
+            System.out.println("L'insertion a réussi");
+        } else {
+            System.out.println("L'insertion a échoué");
+        }
+    }
 
 }
