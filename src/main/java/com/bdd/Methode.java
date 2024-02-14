@@ -24,5 +24,24 @@ public class Methode {
             return false;
         }
     }
+    public Boolean insertBilant(String name_p, String quantity_, int price_b , int date) {
+        String query = "INSERT INTO Bilan (name_product, quantity, price, date) VALUES (?, ?, ?, ?)";
+
+        try (Connection connection = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASSWORD);
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+
+            preparedStatement.setString(1, name_p);
+            preparedStatement.setString(2, quantity_);
+            preparedStatement.setInt(3, price_b);
+            preparedStatement.setInt(4, date);
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0; // True if insertion successful, otherwise false
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }
 
