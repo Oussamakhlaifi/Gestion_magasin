@@ -48,6 +48,14 @@ public class HelloController {
     private TextField ID_product;
     @FXML
     private Button product;
+    @FXML
+    private TextField name_p;
+    @FXML
+    private TextField quantity_;
+    @FXML
+    private TextField price_b ;
+    @FXML
+    private DatePicker date;
 
 @FXML
 protected void ident() {
