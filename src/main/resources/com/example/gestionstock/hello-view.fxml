@@ -39,15 +39,15 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="256.0" layoutY="120.0" prefHeight="28.0" prefWidth="226.0" />
+            <TextField fx:id="name_p" layoutX="256.0" layoutY="120.0" prefHeight="28.0" prefWidth="226.0" />
             <Label layoutX="259.0" layoutY="98.0" prefHeight="22.0" prefWidth="138.0" text="Nom de produit sortie" />
             <Label layoutX="261.0" layoutY="146.0" prefHeight="18.0" prefWidth="108.0" text="Prix" />
-            <DatePicker layoutX="256.0" layoutY="264.0" prefHeight="26.0" prefWidth="226.0" />
-            <TextField layoutX="256.0" layoutY="167.0" prefHeight="26.0" prefWidth="226.0" />
+            <DatePicker fx:id="date" layoutX="256.0" layoutY="264.0" prefHeight="26.0" prefWidth="226.0" />
+            <TextField fx:id="price_b" layoutX="256.0" layoutY="167.0" prefHeight="26.0" prefWidth="226.0" />
             <Label layoutX="258.0" layoutY="199.0" prefHeight="18.0" prefWidth="61.0" text="Quantité" />
             <Label layoutX="257.0" layoutY="245.0" prefHeight="18.0" prefWidth="85.0" text="Date" />
-            <Button layoutX="255.0" layoutY="306.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="226.0" text="Valider" />
-            <TextField layoutX="256.0" layoutY="217.0" prefHeight="26.0" prefWidth="226.0" />
+            <Button fx:id="BouttonB" layoutX="255.0" layoutY="306.0" mnemonicParsing="false" onAction="#Bilan" prefHeight="42.0" prefWidth="226.0" text="Valider" />
+            <TextField fx:id="quantity_" layoutX="256.0" layoutY="217.0" prefHeight="26.0" prefWidth="226.0" />
          </children>
       </AnchorPane>
    </items>

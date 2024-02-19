@@ -1,5 +1,6 @@
 package com.bdd;
 
+import java.math.BigDecimal;
 import java.sql.*;
 
 public class Methode {
@@ -24,16 +25,24 @@ public class Methode {
             return false;
         }
     }
-    public Boolean insertBilant(String name_p, String quantity_, int price_b , int date) {
+    public Boolean insertBilant(String name_pp, int quantity, BigDecimal price_bb, Date date_) {
+        // Vérifiez si name_p est null ou vide
+        if (name_pp == null || name_pp.isEmpty()) {
+            // Si name_p est null ou vide, vous pouvez gérer cette situation de manière appropriée
+            // Par exemple, vous pouvez lever une exception, retourner false ou effectuer d'autres actions selon votre logique métier
+            System.err.println("Le nom du produit est null ou vide.");
+            return false; // Ou lancez une exception ou effectuez d'autres actions
+        }
+
         String query = "INSERT INTO Bilan (name_product, quantity, price, date) VALUES (?, ?, ?, ?)";
 
         try (Connection connection = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASSWORD);
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
-            preparedStatement.setString(1, name_p);
-            preparedStatement.setString(2, quantity_);
-            preparedStatement.setInt(3, price_b);
-            preparedStatement.setInt(4, date);
+            preparedStatement.setString(1, name_pp);
+            preparedStatement.setInt(2, quantity);
+            preparedStatement.setBigDecimal(3, price_bb);
+            preparedStatement.setDate(4, date_);
 
             int rowsAffected = preparedStatement.executeUpdate();
             return rowsAffected > 0; // True if insertion successful, otherwise false
@@ -42,6 +51,7 @@ public class Methode {
             return false;
         }
     }
+
 
 }
 

@@ -9,8 +9,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.EventObject;
 
 public class HelloController {
@@ -56,6 +60,8 @@ public class HelloController {
     private TextField price_b ;
     @FXML
     private DatePicker date;
+    @FXML
+    private Button BouttonB;
 
 @FXML
 protected void ident() {
@@ -227,5 +233,29 @@ protected void AddRegister() {
             System.err.println("Error loading Register page: " + e.getMessage());
         }
     }
+    @FXML
+    protected void Bilan() {
+        // Récupérer les valeurs des champs de texte
+        String name_pp = name_p.getText();
+        String quantityText = quantity_.getText(); // Obtenez le texte du champ TextField
+        int quantity = Integer.parseInt(quantityText);
+        BigDecimal price_bb = new BigDecimal(price_b.getText());
+        LocalDate selectedDate = date.getValue();
+
+// Convertissez-la en un objet Date
+        Date date_ = Date.valueOf(selectedDate);// Convertir en entier avec Integer.parseInt()
+
+        // Créer une instance de la classe Methode
+        Methode methode = new Methode();
+
+        // Appeler la méthode insertBilant sur l'instance de la classe Methode
+        if (methode.insertBilant(name_pp, quantity, price_bb, date_)) {
+            System.out.println("L'insertion a réussi");
+        } else {
+            System.out.println("L'insertion a échoué");
+        }
+    }
 
 }
+
+
