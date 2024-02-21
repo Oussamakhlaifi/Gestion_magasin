@@ -52,6 +52,23 @@ public class Methode {
         }
     }
 
+    public Boolean insertProduct(int idPro,String namePro, int quantityPro, String TypePro) {
+        String query = "INSERT INTO product (id_product,name_product, quantity, type_product) VALUES (?, ?, ?)";
 
+        try (Connection connection = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASSWORD);
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+
+            preparedStatement.setInt(2, idPro);
+            preparedStatement.setString(1, namePro);
+            preparedStatement.setInt(2, quantityPro);
+            preparedStatement.setString(3, TypePro);
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0; // True if insertion successful, otherwise false
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
 
