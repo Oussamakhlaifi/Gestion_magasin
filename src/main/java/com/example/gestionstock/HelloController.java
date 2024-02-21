@@ -11,6 +11,8 @@ import javafx.scene.control.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import javax.swing.JOptionPane;
+
 
 
 import java.io.IOException;
@@ -62,7 +64,14 @@ public class HelloController {
     private DatePicker date;
     @FXML
     private Button BouttonB;
-
+    @FXML
+    private TextField NameProduct;
+    @FXML
+    private TextField TypeProduct;
+    @FXML
+    private TextField QuantityProduct;
+    @FXML
+    private Button BPro;
 @FXML
 protected void ident() {
     String enteredUsername = username.getText();
@@ -210,9 +219,9 @@ protected void AddRegister() {
 
 // Appeler la méthode insertFournisseur sur l'instance de la classe Methode
         if (methode.insertFournisseur(supplierName, productType, productID)) {
-            System.out.println("L'insertion a réussi");
+            JOptionPane.showMessageDialog(null, "L'insertion a réussi", "Succès", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            System.out.println("L'insertion a échoué");
+            JOptionPane.showMessageDialog(null, "L'insertion a échoué", "Erreur", JOptionPane.ERROR_MESSAGE);
         }
     }
     @FXML
@@ -250,9 +259,9 @@ protected void AddRegister() {
 
         // Appeler la méthode insertBilant sur l'instance de la classe Methode
         if (methode.insertBilant(name_pp, quantity, price_bb, date_)) {
-            System.out.println("L'insertion a réussi");
+            JOptionPane.showMessageDialog(null, "L'insertion a réussi", "Succès", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            System.out.println("L'insertion a échoué");
+            JOptionPane.showMessageDialog(null, "L'insertion a échoué", "Erreur", JOptionPane.ERROR_MESSAGE);
         }
     }
 
